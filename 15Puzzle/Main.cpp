@@ -1,14 +1,13 @@
-﻿
-# include <Siv3D.hpp>
+﻿#include <Siv3D.hpp>
+#include "Board.h"
 
 void Main()
 {
-	const Font font(30);
+	Board board;
 
 	while (System::Update())
 	{
-		font(L"ようこそ、Siv3D の世界へ！").draw();
-
-		Circle(Mouse::Pos(), 50).draw({ 255, 0, 0, 127 });
+		board.update();
+		board.draw();
 	}
 }
